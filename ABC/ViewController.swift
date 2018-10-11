@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var temp = 0;
-    var flag = 0;
-
+    var temp :Double = 0;
+    var flag :Double = 0;
+    
     @IBOutlet weak var caculaterDisplay: UITextField!
     
     @IBAction func botton1(_ sender: Any) {
@@ -66,34 +66,40 @@ class ViewController: UIViewController {
     @IBAction func buttonCaculator(_ sender: Any) {
         if(flag == 1)
         {
-            var sum = 0
-            sum = temp + Int(caculaterDisplay.text!)!
+            var sum :Double = 0
+            sum = temp + Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum)"
         }
         if(flag == 2)
         {
-            var sum1 = 0
-            sum1 = temp - Int(caculaterDisplay.text!)!
+            var sum1 :Double = 0
+            sum1 = temp - Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum1)"
         }
         if(flag == 3)
         {
-            var sum2 = 0
-            sum2 = temp * Int(caculaterDisplay.text!)!
+            var sum2 :Double = 0
+            sum2 = temp * Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum2)"
         }
         if(flag == 4)
         {
-            var sum3 = 0
-            sum3 = temp / Int(caculaterDisplay.text!)!
+            var sum3 :Double = 0
+            sum3 = temp / Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum3)"
         }
+        if(flag == 5)
+            {
+                var sum4 :Double = 0
+                sum4 = temp / Double(caculaterDisplay.text!)!
+                caculaterDisplay.text = "\(sum4)"
+                
+        }
     }
-    
-    
+        
     @IBAction func buttonminus(_ sender: Any) {
         temp =
-            Int(caculaterDisplay.text!)!
+            Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 2
         
@@ -101,7 +107,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAdd(_ sender: Any) {
         temp =
-            Int(caculaterDisplay.text!)!
+            Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 1
        
@@ -109,7 +115,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonplus(_ sender: Any) {
         temp =
-            Int(caculaterDisplay.text!)!
+            Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 3
         
@@ -117,24 +123,27 @@ class ViewController: UIViewController {
     
     @IBAction func buttondivide(_ sender: Any) {
         temp =
-            Int(caculaterDisplay.text!)!
+            Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 4
         
     }
-    
     
     @IBAction func buttonpoint(_ sender: Any) {
          caculaterDisplay.text = caculaterDisplay.text!+"."
         
     }
     
-    
-
     @IBAction func clear(_ sender: Any) {
         caculaterDisplay.text = ""
     }
     
+    @IBAction func percent(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 5
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,7 +154,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
