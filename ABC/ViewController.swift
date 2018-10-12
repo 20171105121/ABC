@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var temp :Double = 0;
     var flag :Double = 0;
+    var control_negative:Double = 0
     
     @IBOutlet weak var caculaterDisplay: UITextField!
     
@@ -138,11 +139,26 @@ class ViewController: UIViewController {
         caculaterDisplay.text = ""
     }
     
-    @IBAction func percent(_ sender: Any) {
+    /*@IBAction func percent(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 5
+    }*/
+    
+    @IBAction func back(_ sender: Any) {
+        caculaterDisplay.text?.removeLast()
+    }
+    
+    @IBAction func negative(_ sender: Any) {
+        if control_negative == 0 {
+            caculaterDisplay.text = "-" + caculaterDisplay.text!
+            control_negative = 1
+    }
+        else {
+            caculaterDisplay.text?.removeFirst()
+            control_negative = 0
+        }
     }
     
     override func viewDidLoad() {
