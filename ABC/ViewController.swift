@@ -9,11 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+   
+    @IBOutlet weak var caculaterDisplay: UITextField!
     var temp :Double = 0;
     var flag :Double = 0;
-    var control_negative:Double = 0
-    
-    @IBOutlet weak var caculaterDisplay: UITextField!
+    var control_negative:Double = 0;
+   
     
     @IBAction func botton1(_ sender: Any) {
         caculaterDisplay.text =  caculaterDisplay.text!+"1"
@@ -64,6 +65,14 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func square(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 5
+        
+    }
+    
     @IBAction func buttonCaculator(_ sender: Any) {
         if(flag == 1)
         {
@@ -90,14 +99,19 @@ class ViewController: UIViewController {
             caculaterDisplay.text = "\(sum3)"
         }
         if(flag == 5)
-            {
-                var sum4 :Double = 0
-                sum4 = temp / Double(caculaterDisplay.text!)!
-                caculaterDisplay.text = "\(sum4)"
-                
+        {
+            var sum4 :Double = 0
+            sum4 = pow(temp,Double(caculaterDisplay.text!)!)
+            caculaterDisplay.text = "\(sum4)"
         }
-    }
+        if(flag == 6)
+        {
+            var sum5 :Double = 0
+            sum5 = sqrt(temp)
+            caculaterDisplay.text = "\(sum5)"
+        }
         
+        }
     @IBAction func buttonminus(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
@@ -122,6 +136,7 @@ class ViewController: UIViewController {
         
     }
     
+    
     @IBAction func buttondivide(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
@@ -130,25 +145,29 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func buttonpoint(_ sender: Any) {
-         caculaterDisplay.text = caculaterDisplay.text!+"."
-        
-    }
-    
-    @IBAction func clear(_ sender: Any) {
-        caculaterDisplay.text = ""
-    }
-    
-    /*@IBAction func percent(_ sender: Any) {
+    @IBAction func sign(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
-        flag = 5
-    }*/
+        flag = 6
+        
+    }
+    
+    
+    @IBAction func buttonpoint(_ sender: Any) {
+         caculaterDisplay.text = caculaterDisplay.text!+"."
+    }//小数点
+    
+    
+    @IBAction func clear(_ sender: Any) {
+        caculaterDisplay.text = ""
+    }//清除
+    
     
     @IBAction func back(_ sender: Any) {
         caculaterDisplay.text?.removeLast()
-    }
+    }//退格
+    
     
     @IBAction func negative(_ sender: Any) {
         if control_negative == 0 {
@@ -159,7 +178,7 @@ class ViewController: UIViewController {
             caculaterDisplay.text?.removeFirst()
             control_negative = 0
         }
-    }
+    }//负号
     
     override func viewDidLoad() {
         super.viewDidLoad()
