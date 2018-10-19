@@ -110,7 +110,36 @@ class ViewController: UIViewController {
             sum5 = sqrt(temp)
             caculaterDisplay.text = "\(sum5)"
         }
-        
+        if(flag == 7)
+        {
+            var sum6 :Double = 0
+            sum6 = sin(temp)
+            caculaterDisplay.text = "\(sum6)"
+        }
+        if(flag == 8)
+        {
+            var sum7 :Double = 0
+            sum7 = cos(temp)
+            caculaterDisplay.text = "\(sum7)"
+        }
+        if(flag == 9)
+        {
+            var sum8 :Double = 0
+            sum8 = tan(temp)
+            caculaterDisplay.text = "\(sum8)"
+        }
+        if(flag == 10)
+        {
+            var sum9 :Double = 0
+            sum9 = log(temp)
+            caculaterDisplay.text = "\(sum9)"
+        }
+        /*if(flag == 11)
+        {
+            var sum10 :Double = 0
+            sum10 = Double(caculaterDisplay.text!)! %
+            caculaterDisplay.text = "\(sum10)"
+        }*/
         }
     @IBAction func buttonminus(_ sender: Any) {
         temp =
@@ -136,7 +165,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func buttondivide(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
@@ -152,8 +180,6 @@ class ViewController: UIViewController {
         flag = 6
         
     }
-    
-    
     @IBAction func buttonpoint(_ sender: Any) {
          caculaterDisplay.text = caculaterDisplay.text!+"."
     }//小数点
@@ -167,6 +193,41 @@ class ViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         caculaterDisplay.text?.removeLast()
     }//退格
+    
+    @IBAction func sinc(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 7
+    }
+    
+    @IBAction func coss(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 8
+    }
+    
+    @IBAction func tann(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 9
+    }
+    
+    @IBAction func logg(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 10
+    }
+    
+    @IBAction func leave(_ sender: Any) {
+        temp =
+            Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        flag = 11
+    }
     
     
     @IBAction func negative(_ sender: Any) {
