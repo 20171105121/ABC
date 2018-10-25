@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     var flag :Double = 0;
     var control_negative:Double = 0;
    
-    
     @IBAction func botton1(_ sender: Any) {
         caculaterDisplay.text =  caculaterDisplay.text!+"1"
     }
@@ -134,13 +133,20 @@ class ViewController: UIViewController {
             sum9 = log(temp)
             caculaterDisplay.text = "\(sum9)"
         }
-        /*if(flag == 11)
+        if(flag == 11)
         {
             var sum10 :Double = 0
-            sum10 = Double(caculaterDisplay.text!)! %
+            sum10 = 0.01 * (temp)
             caculaterDisplay.text = "\(sum10)"
-        }*/
         }
+        
+    }
+    
+    
+    
+    
+    
+    
     @IBAction func buttonminus(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
@@ -155,6 +161,7 @@ class ViewController: UIViewController {
         caculaterDisplay.text = ""
         flag = 1
        
+        
     }
     
     @IBAction func buttonplus(_ sender: Any) {
@@ -244,6 +251,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        caculaterDisplay.text = "0"
     }
 
     override func didReceiveMemoryWarning() {
