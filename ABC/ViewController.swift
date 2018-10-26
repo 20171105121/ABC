@@ -14,61 +14,125 @@ class ViewController: UIViewController {
     var temp :Double = 0;
     var flag :Double = 0;
     var control_negative:Double = 0;
-   
-    @IBAction func botton1(_ sender: Any) {
-        caculaterDisplay.text =  caculaterDisplay.text!+"1"
-    }
+    var calFlag :Double = 0;
     
+    
+    @IBAction func botton1(_ sender: Any) {
+        if calFlag == 1{
+        caculaterDisplay.text =  caculaterDisplay.text!+"1"
+        
+    }
+        else{
+            caculaterDisplay.text = "1"
+        }
+        calFlag = 1
+    }
     
     @IBAction func botton2(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"2"
+        
     }
-    
+        else{
+            caculaterDisplay.text = "2"
+        }
+        calFlag = 1
+    }
     
     @IBAction func botton3(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"3"
+         calFlag = 1;
     }
-    
+       else{
+          caculaterDisplay.text = "3"
+    }
+    calFlag = 1
+}
     
     @IBAction func button4(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"4"
+         calFlag = 1;
     }
-    
+        else{
+            caculaterDisplay.text = "4"
+        }
+        calFlag = 1
+    }
     
     @IBAction func button5(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"5"
+         calFlag = 1;
+    }
+        else{
+            caculaterDisplay.text = "5"
+        }
+        calFlag = 1
     }
     
- 
-    @IBAction func button6(_ sender: Any) {
+   @IBAction func button6(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"6"
+         calFlag = 1;
+    }
+        else{
+            caculaterDisplay.text = "6"
+        }
+        calFlag = 1
     }
     
     @IBAction func button7(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"7"
+         calFlag = 1;
     }
-    
+        else{
+            caculaterDisplay.text = "7"
+        }
+        calFlag = 1
+    }
     
     @IBAction func button8(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"8"
+         calFlag = 1;
     }
-    
+        else{
+            caculaterDisplay.text = "8"
+        }
+        calFlag = 1
+    }
     
     @IBAction func button9(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"9"
+         calFlag = 1;
     }
-    
+        else{
+            caculaterDisplay.text = "9"
+        }
+        calFlag = 1
+    }
     
     @IBAction func button0(_ sender: Any) {
+        if calFlag == 1{
         caculaterDisplay.text = caculaterDisplay.text!+"0"
+       
     }
-    
+        else{
+            caculaterDisplay.text = "0"
+        }
+        calFlag = 1
+    }
     
     @IBAction func square(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 5
+         calFlag = 2;
         
     }
     
@@ -139,53 +203,54 @@ class ViewController: UIViewController {
             sum10 = 0.01 * (temp)
             caculaterDisplay.text = "\(sum10)"
         }
-        
     }
-    
-    
-    
-    
     
     
     @IBAction func buttonminus(_ sender: Any) {
-        temp =
-            Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
+        if flag == 2{
+            caculaterDisplay.text = "\(temp - Double(caculaterDisplay.text!)!)"
+            
+        }
+        temp = Double(caculaterDisplay.text!)!
+        calFlag = 2
         flag = 2
-        
     }
     
     @IBAction func buttonAdd(_ sender: Any) {
-        temp =
-            Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
+        if flag == 1{
+            caculaterDisplay.text = "\(temp + Double(caculaterDisplay.text!)!)"
+            
+        }
+        temp = Double(caculaterDisplay.text!)!
+        calFlag = 2
         flag = 1
-       
-        
     }
     
     @IBAction func buttonplus(_ sender: Any) {
-        temp =
-            Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
+        if flag == 3{
+            caculaterDisplay.text = "\(temp * Double(caculaterDisplay.text!)!)"
+            
+        }
+        temp = Double(caculaterDisplay.text!)!
+        calFlag = 2
         flag = 3
-        
     }
     
     @IBAction func buttondivide(_ sender: Any) {
-        temp =
-            Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
+        if flag == 4{
+            caculaterDisplay.text = "\(temp / Double(caculaterDisplay.text!)!)"
+            
+        }
+        temp = Double(caculaterDisplay.text!)!
+        calFlag = 2
         flag = 4
-        
     }
     
     @IBAction func sign(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 6
-        
+        calFlag = 2;
     }
     @IBAction func buttonpoint(_ sender: Any) {
          caculaterDisplay.text = caculaterDisplay.text!+"."
@@ -204,38 +269,37 @@ class ViewController: UIViewController {
     @IBAction func sinc(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 7
+        calFlag = 2;
     }
     
     @IBAction func coss(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 8
+        calFlag = 2;
     }
     
     @IBAction func tann(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-        flag = 9
+       flag = 9
+        calFlag = 2;
     }
     
     @IBAction func logg(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
-        flag = 10
+       flag = 10
+        calFlag = 2;
     }
     
     @IBAction func leave(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-        caculaterDisplay.text = ""
         flag = 11
+        calFlag = 2;
     }
-    
     
     @IBAction func negative(_ sender: Any) {
         if control_negative == 0 {
