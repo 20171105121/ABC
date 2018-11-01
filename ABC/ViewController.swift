@@ -259,8 +259,12 @@ class ViewController: UIViewController {
     
     @IBAction func clear(_ sender: Any) {
         caculaterDisplay.text = ""
+        temp = 0
+        flag = 0
+        control_negative = 0
+        calFlag = 0
+        
     }//清除
-    
     
     @IBAction func back(_ sender: Any) {
         caculaterDisplay.text?.removeLast()
@@ -283,14 +287,14 @@ class ViewController: UIViewController {
     @IBAction func tann(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-       flag = 9
+        flag = 9
         calFlag = 2;
     }
     
     @IBAction func logg(_ sender: Any) {
         temp =
             Double(caculaterDisplay.text!)!
-       flag = 10
+        flag = 10
         calFlag = 2;
     }
     
