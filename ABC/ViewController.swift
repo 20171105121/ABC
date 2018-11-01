@@ -132,7 +132,7 @@ class ViewController: UIViewController {
             Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         flag = 5
-         calFlag = 2;
+         //calFlag = 2;
         
     }
     
